@@ -1,0 +1,19 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: build the solution
+        run: |
+          echo build the solution
+          dotnet restore
+          dotnet build
+      - name: build the solution
+        run: |
+          echo test the solution
+          dotnet test
