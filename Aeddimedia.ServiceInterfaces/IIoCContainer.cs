@@ -10,13 +10,20 @@
         /// </summary>
         /// <typeparam name="InterfaceType">The type of the inerface that will be requested.</typeparam>
         /// <typeparam name="ImplementedType">The type of the actual implementation that will be returned when the interface is requested.</typeparam>
-        void RegisterInstace<InterfaceType, ImplementedType>();
+        void RegisterInstance<InterfaceType, ImplementedType>();
 
         /// <summary>
-        /// Gets the registered instance of the given type.
+        /// Registers the given type as a singleton.
+        /// </summary>
+        /// <typeparam name="InterfaceType">The type of the inerface that will be requested.</typeparam>
+        /// <typeparam name="ImplementedType">The type of the actual implementation that will be returned when the interface is requested.</typeparam>
+        void RegisterSingleton<InterfaceType, ImplementedType>();
+
+        /// <summary>
+        /// Resolves an instance of the given type.
         /// </summary>
         /// <typeparam name="T">The type.</typeparam>
-        /// <returns>The instance of the type.</returns>
-        T GetInstance<T>();
+        /// <returns>An instance of the type.</returns>
+        T Resolve<T>();
     }
 }
